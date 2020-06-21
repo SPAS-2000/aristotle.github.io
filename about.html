@@ -1,0 +1,857 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en-US">
+<head>
+	<meta charset="UTF-8"/>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>About Us &#8211; Classes</title>
+
+<meta name='viewport' content='width=device-width, initial-scale=1'>
+<script src='https://kit.fontawesome.com/a076d05399.js'></script>
+
+<meta name='robots' content='noindex,follow' />
+<link rel='dns-prefetch' href='//fonts.googleapis.com' />
+<link rel='dns-prefetch' href='//s.w.org' />
+<link rel="alternate" type="application/rss+xml" title="Classes &raquo; Feed" href="http://ed.aislinthemes.com/classes/feed/" />
+<link rel="alternate" type="text/calendar" title="Classes &raquo; iCal Feed" href="http://ed.aislinthemes.com/classes/events/?ical=1" />
+		<script type="text/javascript">
+			window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/12.0.0-1\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/12.0.0-1\/svg\/","svgExt":".svg","source":{"wpemoji":"http:\/\/ed.aislinthemes.com\/classes\/wp-includes\/js\/wp-emoji.js?ver=5.2.3","twemoji":"http:\/\/ed.aislinthemes.com\/classes\/wp-includes\/js\/twemoji.js?ver=5.2.3"}};
+			/**
+ * @output wp-includes/js/wp-emoji-loader.js
+ */
+
+( function( window, document, settings ) {
+	var src, ready, ii, tests;
+
+	// Create a canvas element for testing native browser support of emoji.
+	var canvas = document.createElement( 'canvas' );
+	var context = canvas.getContext && canvas.getContext( '2d' );
+
+	
+	function emojiSetsRenderIdentically( set1, set2 ) {
+		var stringFromCharCode = String.fromCharCode;
+
+		// Cleanup from previous test.
+		context.clearRect( 0, 0, canvas.width, canvas.height );
+		context.fillText( stringFromCharCode.apply( this, set1 ), 0, 0 );
+		var rendered1 = canvas.toDataURL();
+
+		// Cleanup from previous test.
+		context.clearRect( 0, 0, canvas.width, canvas.height );
+		context.fillText( stringFromCharCode.apply( this, set2 ), 0, 0 );
+		var rendered2 = canvas.toDataURL();
+
+		return rendered1 === rendered2;
+	}
+
+	
+	function browserSupportsEmoji( type ) {
+		var isIdentical;
+
+		if ( ! context || ! context.fillText ) {
+			return false;
+		}
+
+		
+		context.textBaseline = 'top';
+		context.font = '600 32px Arial';
+
+		switch ( type ) {
+			case 'flag':
+				
+				isIdentical = emojiSetsRenderIdentically(
+					[ 0xD83C, 0xDDFA, 0xD83C, 0xDDF3 ],
+					[ 0xD83C, 0xDDFA, 0x200B, 0xD83C, 0xDDF3 ]
+				);
+
+				if ( isIdentical ) {
+					return false;
+				}
+
+				
+				isIdentical = emojiSetsRenderIdentically(
+					[ 0xD83C, 0xDFF4, 0xDB40, 0xDC67, 0xDB40, 0xDC62, 0xDB40, 0xDC65, 0xDB40, 0xDC6E, 0xDB40, 0xDC67, 0xDB40, 0xDC7F ],
+					[ 0xD83C, 0xDFF4, 0x200B, 0xDB40, 0xDC67, 0x200B, 0xDB40, 0xDC62, 0x200B, 0xDB40, 0xDC65, 0x200B, 0xDB40, 0xDC6E, 0x200B, 0xDB40, 0xDC67, 0x200B, 0xDB40, 0xDC7F ]
+				);
+
+				return ! isIdentical;
+			case 'emoji':
+				
+				isIdentical = emojiSetsRenderIdentically(
+					[0xD83D, 0xDC68, 0xD83C, 0xDFFE, 0x200D, 0xD83E, 0xDD1D, 0x200D, 0xD83D, 0xDC68, 0xD83C, 0xDFFC],
+					[0xD83D, 0xDC68, 0xD83C, 0xDFFE, 0x200B, 0xD83E, 0xDD1D, 0x200B, 0xD83D, 0xDC68, 0xD83C, 0xDFFC]
+				);
+
+				return ! isIdentical;
+		}
+
+		return false;
+	}
+
+	
+	function addScript( src ) {
+		var script = document.createElement( 'script' );
+
+		script.src = src;
+		script.defer = script.type = 'text/javascript';
+		document.getElementsByTagName( 'head' )[0].appendChild( script );
+	}
+
+	tests = Array( 'flag', 'emoji' );
+
+	settings.supports = {
+		everything: true,
+		everythingExceptFlag: true
+	};
+
+	
+	for( ii = 0; ii < tests.length; ii++ ) {
+		settings.supports[ tests[ ii ] ] = browserSupportsEmoji( tests[ ii ] );
+
+		settings.supports.everything = settings.supports.everything && settings.supports[ tests[ ii ] ];
+
+		if ( 'flag' !== tests[ ii ] ) {
+			settings.supports.everythingExceptFlag = settings.supports.everythingExceptFlag && settings.supports[ tests[ ii ] ];
+		}
+	}
+
+	settings.supports.everythingExceptFlag = settings.supports.everythingExceptFlag && ! settings.supports.flag;
+
+	// Sets DOMReady to false and assigns a ready function to settings.
+	settings.DOMReady = false;
+	settings.readyCallback = function() {
+		settings.DOMReady = true;
+	};
+
+	// When the browser can not render everything we need to load a polyfill.
+	if ( ! settings.supports.everything ) {
+		ready = function() {
+			settings.readyCallback();
+		};
+
+		/*
+		 * Cross-browser version of adding a dom ready event.
+		 */
+		if ( document.addEventListener ) {
+			document.addEventListener( 'DOMContentLoaded', ready, false );
+			window.addEventListener( 'load', ready, false );
+		} else {
+			window.attachEvent( 'onload', ready );
+			document.attachEvent( 'onreadystatechange', function() {
+				if ( 'complete' === document.readyState ) {
+					settings.readyCallback();
+				}
+			} );
+		}
+
+		src = settings.source || {};
+
+		if ( src.concatemoji ) {
+			addScript( src.concatemoji );
+		} else if ( src.wpemoji && src.twemoji ) {
+			addScript( src.twemoji );
+			addScript( src.wpemoji );
+		}
+	}
+
+} )( window, document, window._wpemojiSettings );
+		</script>
+		<style type="text/css">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 .07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+<link rel='stylesheet' id='sb_instagram_styles-css'  href='http://ed.aislinthemes.com/app/plugins/instagram-feed/css/sb-instagram-2-2.min.css?ver=2.4.3' type='text/css' media='all' />
+<link rel='stylesheet' id='wp-block-library-css'  href='http://ed.aislinthemes.com/classes/wp-includes/css/dist/block-library/style.css?ver=5.2.3' type='text/css' media='all' />
+<link rel='stylesheet' id='contact-form-7-css'  href='http://ed.aislinthemes.com/app/plugins/contact-form-7/includes/css/styles.css?ver=5.1.3' type='text/css' media='all' />
+<link rel='stylesheet' id='mega-submenu-css'  href='http://ed.aislinthemes.com/app/plugins/mega-submenu/public/css/style.css?ver=1.3.0' type='text/css' media='all' />
+<link rel='stylesheet' id='mega-submenu-woocommerce-css'  href='http://ed.aislinthemes.com/app/plugins/mega-submenu/public/css/woocommerce.css?ver=1.3.0' type='text/css' media='all' />
+<link rel='stylesheet' id='rs-plugin-settings-css'  href='http://ed.aislinthemes.com/app/plugins/revslider/public/assets/css/rs6.css?ver=6.2.6' type='text/css' media='all' />
+<style id='rs-plugin-settings-inline-css' type='text/css'>
+#rs-demo-id {}
+</style>
+<link rel='stylesheet' id='module-frontend-css'  href='http://ed.aislinthemes.com/app/plugins/sensei-lms/assets/css/modules-frontend.css?ver=3.0.1' type='text/css' media='all' />
+<link rel='stylesheet' id='sensei-frontend-css'  href='http://ed.aislinthemes.com/app/plugins/sensei-lms/assets/css/frontend/sensei.css?ver=3.0.1' type='text/css' media='screen' />
+<link rel='stylesheet' id='ed-school-plugin-elementor-css'  href='http://ed.aislinthemes.com/app/plugins/ed-school-plugin/includes/elementor/assets/css/main.css?ver=5.2.3' type='text/css' media='all' />
+<link rel='stylesheet' id='ed-school-theme-icons-css'  href='http://ed.aislinthemes.com/app/themes/ed-school/assets/css/theme-icons.css?ver=5.2.3' type='text/css' media='all' />
+<link rel='stylesheet' id='testimonial-rotator-style-css'  href='http://ed.aislinthemes.com/app/plugins/testimonial-rotator/testimonial-rotator-style.css?ver=5.2.3' type='text/css' media='all' />
+<link rel='stylesheet' id='font-awesome-css'  href='http://ed.aislinthemes.com/app/plugins/elementor/assets/lib/font-awesome/css/font-awesome.css?ver=4.7.0' type='text/css' media='all' />
+<link rel='stylesheet' id='_aislin-purchase-button-fonts-css'  href='//fonts.googleapis.com/css?family=Roboto%3A400%2C700&#038;ver=5.2.3' type='text/css' media='all' />
+<link rel='stylesheet' id='_aislin-purchase-button-css'  href='http://ed.aislinthemes.com/app/plugins/wp-plugin-aislin-purchase-button/public/css/main.css?ver=5.2.3' type='text/css' media='all' />
+<link rel='stylesheet' id='elementor-icons-css'  href='http://ed.aislinthemes.com/app/plugins/elementor/assets/lib/eicons/css/elementor-icons.css?ver=5.5.0' type='text/css' media='all' />
+<link rel='stylesheet' id='elementor-animations-css'  href='http://ed.aislinthemes.com/app/plugins/elementor/assets/lib/animations/animations.min.css?ver=2.8.3' type='text/css' media='all' />
+<link rel='stylesheet' id='elementor-frontend-css'  href='http://ed.aislinthemes.com/app/plugins/elementor/assets/css/frontend.css?ver=2.8.3' type='text/css' media='all' />
+<style id='elementor-frontend-inline-css' type='text/css'>
+@media (min-width: 1500px){
+    .elementor-8644 .elementor-element.elementor-element-10853de {
+        padding: 0 120px;
+    }
+}
+</style>
+<link rel='stylesheet' id='font-awesome-5-all-css'  href='http://ed.aislinthemes.com/app/plugins/elementor/assets/lib/font-awesome/css/all.css?ver=2.8.3' type='text/css' media='all' />
+<link rel='stylesheet' id='font-awesome-4-shim-css'  href='http://ed.aislinthemes.com/app/plugins/elementor/assets/lib/font-awesome/css/v4-shims.css?ver=2.8.3' type='text/css' media='all' />
+<link rel='stylesheet' id='elementor-post-5259-css'  href='http://ed.aislinthemes.com/app/uploads/sites/6/elementor/css/post-5259.css?ver=1588711679' type='text/css' media='all' />
+<style id='elementor-post-5259-inline-css' type='text/css'>
+.elementor-5259 .elementor-element.elementor-element-531fe73 > .elementor-container {max-width: 1500px !important;}
+</style>
+<link rel='stylesheet' id='ed-school-plugin-style-css'  href='http://ed.aislinthemes.com/app/plugins/ed-school-plugin/public/css/style.css?ver=5.2.3' type='text/css' media='all' />
+<link rel='stylesheet' id='groundwork-grid-css'  href='http://ed.aislinthemes.com/app/themes/ed-school/assets/css/groundwork-responsive.css?ver=5.2.3' type='text/css' media='all' />
+<link rel='stylesheet' id='js_composer_front-css'  href='http://ed.aislinthemes.com/app/plugins/js_composer/assets/css/js_composer.min.css?ver=6.2.0' type='text/css' media='all' />
+<link rel='stylesheet' id='ed-school-style-css'  href='http://ed.aislinthemes.com/app/themes/ed-school/style.css?ver=5.2.3' type='text/css' media='all' />
+<style id='ed-school-style-inline-css' type='text/css'>
+.header-mobile {display: none;}@media screen and (max-width:1100px) {.header-left {padding-left: 0;}.wh-header, .wh-top-bar {display: none;}.header-mobile {display: block;}}
+</style>
+<link rel='stylesheet' id='magnific-popup-css'  href='http://ed.aislinthemes.com/app/plugins/ed-school-plugin/includes/elementor/widgets/video-popup/assets/magnific-popup.css?ver=5.2.3' type='text/css' media='all' />
+<link rel='stylesheet' id='redux-google-fonts-ed_school_options-css' href="https://fonts.googleapis.com/css?family=Montserrat%3A100%2C200%2C300%2C400%2C500%2C600%2C700%2C800%2C900%2C100italic%2C200italic%2C300italic%2C400italic%2C500italic%2C600italic%2C700italic%2C800italic%2C900italic&#038;subset=latin&#038;ver=1589276046" type='text/css' media='all' />
+<link rel='stylesheet' id='ed_school_options_style-css'  href='//ed.aislinthemes.com/app/uploads/sites/6/ed_school_options_style.css?ver=5.2.3' type='text/css' media='all' />
+<style id='ed_school_options_style-inline-css' type='text/css'>
+.menu-label {
+    background: #ffbc59;
+    border-radius: 2px;
+    color: #fff;
+    font-family: "Libre Franklin";
+    font-size: 0.5em;
+    font-weight: 900;
+    margin-left: 6px;
+    padding: 2px 5px 2px 5px;
+    position: relative;
+    top: -3px;
+}
+
+/* Course button and link colors */
+.linp-featured-courses-carousel .course-link-btn {
+    background-color: #2690b1;
+}
+.linp-featured-courses-carousel .course-link-btn:hover {
+    background-color: #1f82a1;
+}
+.linp-featured-courses-carousel .course-meta li a {
+    color: #2690b1;
+}
+
+.page-title {
+    background: #ff7d0087;
+    padding: 30px 35px;
+    display: inline-block;
+    min-width: 50%;
+}
+
+.page-title:after {
+    content: "\f0dd" !important;
+    font-family: FontAwesome !important;
+    font-size: 1em;
+    font-weight: normal;
+    position: relative;
+    bottom: 0;
+    display: block;
+    left: 0;
+    line-height: 0.7em;
+}
+
+.single-tribe_events .page-title {
+    padding: 0;
+    background: transparent;
+}
+.single-tribe_events .page-title:after {
+    content: "" !important;
+}
+.respmenu-header-logo-link {
+    margin: 10px 0;
+}.vc_custom_1513250920375{margin-bottom: -1px !important;padding-top: 10px !important;padding-right: 25px !important;padding-bottom: 10px !important;padding-left: 25px !important;}
+</style>
+<link rel='stylesheet' id='elementor-post-8644-css'  href='http://ed.aislinthemes.com/app/uploads/sites/6/elementor/css/post-8644.css?ver=1589448909' type='text/css' media='all' />
+<link rel='stylesheet' id='elementor-post-5520-css'  href='http://ed.aislinthemes.com/app/uploads/sites/6/elementor/css/post-5520.css?ver=1588931938' type='text/css' media='all' />
+<link rel='stylesheet' id='google-fonts-1-css'  href='https://fonts.googleapis.com/css?family=Montserrat%3A100%2C100italic%2C200%2C200italic%2C300%2C300italic%2C400%2C400italic%2C500%2C500italic%2C600%2C600italic%2C700%2C700italic%2C800%2C800italic%2C900%2C900italic&#038;ver=5.2.3' type='text/css' media='all' />
+<link rel='stylesheet' id='elementor-icons-shared-0-css'  href='http://ed.aislinthemes.com/app/plugins/elementor/assets/lib/font-awesome/css/fontawesome.css?ver=5.9.0' type='text/css' media='all' />
+<link rel='stylesheet' id='elementor-icons-fa-solid-css'  href='http://ed.aislinthemes.com/app/plugins/elementor/assets/lib/font-awesome/css/solid.css?ver=5.9.0' type='text/css' media='all' />
+<link rel='stylesheet' id='elementor-icons-fa-regular-css'  href='http://ed.aislinthemes.com/app/plugins/elementor/assets/lib/font-awesome/css/regular.css?ver=5.9.0' type='text/css' media='all' />
+<link rel='stylesheet' id='elementor-icons-fa-brands-css'  href='http://ed.aislinthemes.com/app/plugins/elementor/assets/lib/font-awesome/css/brands.css?ver=5.9.0' type='text/css' media='all' />
+<!--n2css--><script type='text/javascript' src='http://ed.aislinthemes.com/classes/wp-includes/js/jquery/jquery.js?ver=1.12.4-wp'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var wheels = {"siteName":"Classes","data":{"useScrollToTop":false,"useStickyMenu":true,"scrollToTopText":"","isAdminBarShowing":false,"initialWaypointScrollCompensation":"120","preloaderSpinner":0,"preloaderBgColor":"#ffffff"}};
+/* ]]> */
+</script>
+<script type='text/javascript' src='http://ed.aislinthemes.com/classes/wp-includes/js/jquery/jquery-migrate.js?ver=1.4.1'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var msm_mega_submenu = {"data":{"submenu_items_position_relative":0,"mobile_menu_trigger_click_bellow":768}};
+/* ]]> */
+</script>
+<link rel='https://api.w.org/' href='http://ed.aislinthemes.com/classes/wp-json/' />
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="http://ed.aislinthemes.com/classes/xmlrpc.php?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="http://ed.aislinthemes.com/classes/wp-includes/wlwmanifest.xml" /> 
+<meta name="generator" content="WordPress 5.2.3" />
+<link rel="canonical" href="http://ed.aislinthemes.com/classes/about-us/" />
+<link rel='shortlink' href='http://ed.aislinthemes.com/classes/?p=5259' />
+<link rel="alternate" type="application/json+oembed" href="http://ed.aislinthemes.com/classes/wp-json/oembed/1.0/embed?url=http%3A%2F%2Fed.aislinthemes.com%2Fclasses%2Fabout-us%2F" />
+<link rel="alternate" type="text/xml+oembed" href="http://ed.aislinthemes.com/classes/wp-json/oembed/1.0/embed?url=http%3A%2F%2Fed.aislinthemes.com%2Fclasses%2Fabout-us%2F&#038;format=xml" />
+<meta name="tec-api-version" content="v1"><meta name="tec-api-origin" content="http://ed.aislinthemes.com/classes"><link rel="https://theeventscalendar.com/" href="http://ed.aislinthemes.com/classes/wp-json/tribe/events/v1/" />
+<style type="text/css" id="breadcrumb-trail-css">.breadcrumbs .trail-browse,.breadcrumbs .trail-items,.breadcrumbs .trail-items li {display: inline-block;margin:0;padding: 0;border:none;background:transparent;text-indent: 0;}.breadcrumbs .trail-browse {font-size: inherit;font-style:inherit;font-weight: inherit;color: inherit;}.breadcrumbs .trail-items {list-style: none;}.trail-items li::after {content: "\002F";padding: 0 0.5em;}.trail-items li:last-of-type::after {display: none;}</style>
+<meta name="generator" content="Powered by WPBakery Page Builder - drag and drop page builder for WordPress."/>
+<meta name="generator" content="Powered by Slider Revolution 6.2.6 - responsive, Mobile-Friendly Slider Plugin for WordPress with comfortable drag and drop interface." />
+<link rel="icon" href="croplogo.png" sizes="32x32" />
+<link rel="icon" href="croplogo.png" sizes="192x192" />
+<link rel="apple-touch-icon-precomposed" href="croplogo.png" />
+<meta name="msapplication-TileImage" content="croplogo.png" />
+<script type="text/javascript">function setREVStartSize(e){
+			//window.requestAnimationFrame(function() {				 
+				window.RSIW = window.RSIW===undefined ? window.innerWidth : window.RSIW;	
+				window.RSIH = window.RSIH===undefined ? window.innerHeight : window.RSIH;	
+				try {								
+					var pw = document.getElementById(e.c).parentNode.offsetWidth,
+						newh;
+					pw = pw===0 || isNaN(pw) ? window.RSIW : pw;
+					e.tabw = e.tabw===undefined ? 0 : parseInt(e.tabw);
+					e.thumbw = e.thumbw===undefined ? 0 : parseInt(e.thumbw);
+					e.tabh = e.tabh===undefined ? 0 : parseInt(e.tabh);
+					e.thumbh = e.thumbh===undefined ? 0 : parseInt(e.thumbh);
+					e.tabhide = e.tabhide===undefined ? 0 : parseInt(e.tabhide);
+					e.thumbhide = e.thumbhide===undefined ? 0 : parseInt(e.thumbhide);
+					e.mh = e.mh===undefined || e.mh=="" || e.mh==="auto" ? 0 : parseInt(e.mh,0);		
+					if(e.layout==="fullscreen" || e.l==="fullscreen") 						
+						newh = Math.max(e.mh,window.RSIH);					
+					else{					
+						e.gw = Array.isArray(e.gw) ? e.gw : [e.gw];
+						for (var i in e.rl) if (e.gw[i]===undefined || e.gw[i]===0) e.gw[i] = e.gw[i-1];					
+						e.gh = e.el===undefined || e.el==="" || (Array.isArray(e.el) && e.el.length==0)? e.gh : e.el;
+						e.gh = Array.isArray(e.gh) ? e.gh : [e.gh];
+						for (var i in e.rl) if (e.gh[i]===undefined || e.gh[i]===0) e.gh[i] = e.gh[i-1];
+											
+						var nl = new Array(e.rl.length),
+							ix = 0,						
+							sl;					
+						e.tabw = e.tabhide>=pw ? 0 : e.tabw;
+						e.thumbw = e.thumbhide>=pw ? 0 : e.thumbw;
+						e.tabh = e.tabhide>=pw ? 0 : e.tabh;
+						e.thumbh = e.thumbhide>=pw ? 0 : e.thumbh;					
+						for (var i in e.rl) nl[i] = e.rl[i]<window.RSIW ? 0 : e.rl[i];
+						sl = nl[0];									
+						for (var i in nl) if (sl>nl[i] && nl[i]>0) { sl = nl[i]; ix=i;}															
+						var m = pw>(e.gw[ix]+e.tabw+e.thumbw) ? 1 : (pw-(e.tabw+e.thumbw)) / (e.gw[ix]);					
+						newh =  (e.gh[ix] * m) + (e.tabh + e.thumbh);
+					}				
+					if(window.rs_init_css===undefined) window.rs_init_css = document.head.appendChild(document.createElement("style"));					
+					document.getElementById(e.c).height = newh+"px";
+					window.rs_init_css.innerHTML += "#"+e.c+"_wrapper { height: "+newh+"px }";				
+				} catch(e){
+					console.log("Failure at Presize of Slider:" + e)
+				}					   
+			//});
+		  };</script>
+<noscript><style> .wpb_animate_when_almost_visible { opacity: 1; }</style></noscript></head>
+<body class="page-template page-template-template-fullwidth page-template-template-fullwidth-php page page-id-5259 wp-custom-logo tribe-no-js header-top page-title-enabled wpb-js-composer js-comp-ver-6.2.0 vc_responsive elementor-default elementor-page elementor-page-5259">
+		<div class="header-mobile">
+		<div class="vc_row wpb_row vc_row-fluid"><div class="wpb_column vc_column_container vc_col-sm-12"><div class="vc_column-inner vc_custom_1513250920375"><div class="wpb_wrapper"><div id="wh-mobile-menu" class="respmenu-wrap">
+	<div class="menu-mobile-menu-container"><ul id="menu-mobile-menu" class="respmenu"><li id="menu-item-9833" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-9833 msm-top-level-item"><a href="index.html#">Home</a>
+<div class="respmenu-submenu-toggle cbp-respmenu-more"><i class="icon-edright-arrow"></i></div>
+</li>
+<li id="menu-item-9840" class="menu-item menu-item-type-post_type menu-item-object-page current-menu-item page_item page-item-5259 current_page_item menu-item-has-children menu-item-9840 msm-top-level-item"><a href="#" aria-current="page">About</a>
+<div class="respmenu-submenu-toggle cbp-respmenu-more"><i class="icon-edright-arrow"></i></div>
+</li>
+<li id="menu-item-9848" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-9848 msm-top-level-item"><a href="#">Admissions</a>
+<div class="respmenu-submenu-toggle cbp-respmenu-more"><i class="icon-edright-arrow"></i></div>
+</li>
+<li id="menu-item-9852" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-9852 msm-top-level-item"><a href="#">Academics</a>
+<div class="respmenu-submenu-toggle cbp-respmenu-more"><i class="icon-edright-arrow"></i></div>
+</li>
+<li id="menu-item-9866" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-9866 msm-top-level-item"><a href="#">Courses</a>
+<div class="respmenu-submenu-toggle cbp-respmenu-more"><i class="icon-edright-arrow"></i></div>
+
+</li>
+<li id="menu-item-4733" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-4733 msm-top-level-item"><a href="home.html">Community</a>
+<div class="respmenu-submenu-toggle cbp-respmenu-more"><i class="icon-edright-arrow"></i></div>
+
+</li>
+<li id="menu-item-9870" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-9870 msm-top-level-item"><a href="#">Contact us</a></li>
+</ul></div></div>
+</div></div></div></div>	</div>
+		<div class="cbp-row wh-header top wh-sticky-header-enabled">
+				<div data-elementor-type="wp-post" data-elementor-id="8644" class="elementor elementor-8644" data-elementor-settings="[]">
+			<div class="elementor-inner">
+				<div class="elementor-section-wrap">
+							<section class="elementor-element elementor-element-10853de elementor-section-stretched elementor-section-full_width elementor-section-height-default elementor-section-height-default elementor-section elementor-top-section" data-id="10853de" data-element_type="section" data-settings="{&quot;stretch_section&quot;:&quot;section-stretched&quot;}">
+						<div class="elementor-container elementor-column-gap-default">
+				<div class="elementor-row">
+				<div class="elementor-element elementor-element-b9aaee2 width-auto  elementor-column elementor-col-20 elementor-top-column" data-id="b9aaee2" data-element_type="column">
+			<div class="elementor-column-wrap  elementor-element-populated">
+					<div class="elementor-widget-wrap">
+				<div class="elementor-element elementor-element-908deac elementor-widget elementor-widget-scp_logo" data-id="908deac" data-element_type="widget" data-widget_type="scp_logo.default">
+				<div class="elementor-widget-container">
+			<div class="elementor-image"><a href="http://ed.aislinthemes.com/classes/"><img src="mylogo.png" alt="logo"/></a></div>		</div>
+				</div>
+						</div>
+			</div>
+		</div>
+				<div class="elementor-element elementor-element-c21318d width-auto margin-left-auto elementor-column elementor-col-20 elementor-top-column" data-id="c21318d" data-element_type="column">
+			<div class="elementor-column-wrap  elementor-element-populated">
+					<div class="elementor-widget-wrap">
+				<div class="left elementor-element elementor-element-faadc54 elementor-widget elementor-widget-scp_menu" data-id="faadc54" data-element_type="widget" data-widget_type="scp_menu.default">
+				<div class="elementor-widget-container">
+			<div id="cbp-menu-main" class="menu-main-menu-container"><ul id="menu-main-menu-1" class="sf-menu wh-menu-main left"><li class="menu-item"><a href="index.html#">Home</a>
+</li>
+<li class="menu-item"><a href="#" aria-current="page">About</a>
+</li>
+<li class="menu-item"><a href="#">Academics</a>
+</li>
+<li class="menu-item"><a href="#">Courses</a>
+</li>
+<li class="menu-item"><a href="home.html">Community</a>
+</li>
+</ul></div>		</div>
+				</div>
+						</div>
+			</div>
+		</div>
+				<div class="elementor-element elementor-element-474420b width-auto  elementor-column elementor-col-20 elementor-top-column" data-id="474420b" data-element_type="column">
+			<div class="elementor-column-wrap  elementor-element-populated">
+					<div class="elementor-widget-wrap">
+				<div class="elementor-element elementor-element-4ded73d elementor-align-justify elementor-widget elementor-widget-button" data-id="4ded73d" data-element_type="widget" data-widget_type="button.default">
+				<div class="elementor-widget-container">
+					<div class="elementor-button-wrapper">
+			<a href="#" class="elementor-button-link elementor-button elementor-size-lg" role="button">
+						<span class="elementor-button-content-wrapper">
+						<span class="elementor-button-text">ENROLL</span>
+		</span>
+					</a>
+		</div>
+				</div>
+				</div>
+						</div>
+			</div>
+		</div>
+				<div class="elementor-element elementor-element-2c519a4 width-auto  elementor-column elementor-col-20 elementor-top-column" data-id="2c519a4" data-element_type="column">
+			<div class="elementor-column-wrap  elementor-element-populated">
+					<div class="elementor-widget-wrap">
+				<div class="elementor-element elementor-element-873a83c elementor-align-justify elementor-widget elementor-widget-button" data-id="873a83c" data-element_type="widget" data-widget_type="button.default">
+				<div class="elementor-widget-container">
+					<div class="elementor-button-wrapper">
+			<a href="http://ed.aislinthemes.com/classes/contact-us" class="elementor-button-link elementor-button elementor-size-lg" role="button">
+						<span class="elementor-button-content-wrapper">
+						<span class="elementor-button-text">contact</span>
+		</span>
+					</a>
+		</div>
+				</div>
+				</div>
+						</div>
+			</div>
+		</div>
+				<div class="elementor-element elementor-element-7c960fa width-auto  elementor-column elementor-col-20 elementor-top-column" data-id="7c960fa" data-element_type="column">
+			<div class="elementor-column-wrap  elementor-element-populated">
+					<div class="elementor-widget-wrap">
+				<div class="elementor-element elementor-element-3dda438 elementor-shape-square elementor-widget elementor-widget-social-icons" data-id="3dda438" data-element_type="widget" data-widget_type="social-icons.default">
+				<div class="elementor-widget-container">
+					<div class="elementor-social-icons-wrapper">
+							<a href="" class="elementor-icon elementor-social-icon elementor-social-icon-facebook-f elementor-repeater-item-240e416" target="_blank">
+					<span class="elementor-screen-only">Facebook-f</span>
+					<i class="fab fa-facebook-f"></i>				</a>
+							<a href="" class="elementor-icon elementor-social-icon elementor-social-icon-twitter elementor-repeater-item-b9443df" target="_blank">
+					<span class="elementor-screen-only">Twitter</span>
+					<i class="fab fa-twitter"></i>				</a>
+							<a href="" class="elementor-icon elementor-social-icon elementor-social-icon-linkedin-in elementor-repeater-item-eb9b1ee" target="_blank">
+					<span class="elementor-screen-only">Linkedin-in</span>
+					<i class="fab fa-linkedin-in"></i>				</a>
+					</div>
+				</div>
+				</div>
+						</div>
+			</div>
+		</div>
+						</div>
+			</div>
+		</section>
+						</div>
+			</div>
+		</div>
+			</div>
+	<div class="cbp-row wh-page-title-bar">
+					<div class="cbp-container">
+				<div class="one whole wh-padding wh-page-title-wrapper">
+					<h1 class="page-title">About Us</h1>
+																										</div>
+					</div>
+	</div>
+		<div class="cbp-row wh-breadcrumbs-bar">
+		<div class="cbp-container">
+			<div class="one whole wh-padding wh-breadcrumbs-wrapper">
+		
+			</div>
+		</div>
+	</div>
+<div class="cbp-row wh-content">
+	<div class="cbp-container">
+		<div class="entry-content one whole wh-padding">
+						<div data-elementor-type="wp-post" data-elementor-id="5259" class="elementor elementor-5259" data-elementor-settings="[]">
+			<div class="elementor-inner">
+				<div class="elementor-section-wrap">
+							<section class="elementor-element elementor-element-b3ec0b2 elementor-section-stretched elementor-section-boxed elementor-section-height-default elementor-section-height-default elementor-section elementor-top-section" data-id="b3ec0b2" data-element_type="section" data-settings="{&quot;stretch_section&quot;:&quot;section-stretched&quot;}">
+						<div class="elementor-container elementor-column-gap-default">
+				<div class="elementor-row">
+				<div class="elementor-element elementor-element-ddc4132 elementor-column elementor-col-33 elementor-top-column" data-id="ddc4132" data-element_type="column">
+			<div class="elementor-column-wrap  elementor-element-populated">
+					<div class="elementor-widget-wrap">
+				<div class="elementor-element elementor-element-adbba15 elementor-widget elementor-widget-heading" data-id="adbba15" data-element_type="widget" data-widget_type="heading.default">
+				<div class="elementor-widget-container">
+			<h2 class="elementor-heading-title elementor-size-default">Discover your might and start exploring right now</h2>		</div>
+				</div>
+				<div class="elementor-element elementor-element-e2bf7b4 elementor-widget elementor-widget-text-editor" data-id="e2bf7b4" data-element_type="widget" data-widget_type="text-editor.default">
+				<div class="elementor-widget-container">
+					<div class="elementor-text-editor elementor-clearfix"><p>We give children the key to open the gates to an amazing world of knowledge and the future. </p></div>
+				</div>
+				</div>
+				<div class="elementor-element elementor-element-d9f521a elementor-mobile-align-justify elementor-widget elementor-widget-button" data-id="d9f521a" data-element_type="widget" data-widget_type="button.default">
+				<div class="elementor-widget-container">
+					<div class="elementor-button-wrapper">
+			<a href="#" class="elementor-button-link elementor-button elementor-size-sm" role="button">
+						<span class="elementor-button-content-wrapper">
+						<span class="elementor-button-icon elementor-align-icon-right">
+				<i aria-hidden="true" class="fas fa-caret-right"></i>			</span>
+						<span class="elementor-button-text">Visit Us</span>
+		</span>
+					</a>
+		</div>
+				</div>
+				</div>
+						</div>
+			</div>
+		</div>
+				<div class="elementor-element elementor-element-41f45eb elementor-column elementor-col-33 elementor-top-column" data-id="41f45eb" data-element_type="column">
+			<div class="elementor-column-wrap  elementor-element-populated">
+					<div class="elementor-widget-wrap">
+				<div class="elementor-element elementor-element-1ac42b4 elementor-widget elementor-widget-text-editor" data-id="1ac42b4" data-element_type="widget" data-widget_type="text-editor.default">
+				<div class="elementor-widget-container">
+					<div class="elementor-text-editor elementor-clearfix"><p>We are actively committed to quality education. We provide kids with a platform to connect with a community.</p><p>Our goal is to foster a lifelong passion for learning, understanding, and service in an ever-changing world.</p><p>We invite you to learn more about us by contacting us. We are confident that you will leave with an appreciation for our values, our program, and our people.</p></div>
+				</div>
+				</div>
+						</div>
+			</div>
+		</div>
+				<div class="elementor-element elementor-element-8036cc7 elementor-column elementor-col-33 elementor-top-column" data-id="8036cc7" data-element_type="column">
+			<div class="elementor-column-wrap  elementor-element-populated">
+					<div class="elementor-widget-wrap">
+				<div class="elementor-element elementor-element-e580ef0 elementor-widget elementor-widget-heading" data-id="e580ef0" data-element_type="widget" data-widget_type="heading.default">
+				<div class="elementor-widget-container">
+			<h4 class="elementor-heading-title elementor-size-default">We are a team having the passion to teach kids to learn with a purpose and not just because they have to</h4>		</div>
+				</div>
+				<div class="elementor-element elementor-element-bac8a3b elementor-mobile-align-left arrow-right elementor-widget elementor-widget-button" data-id="bac8a3b" data-element_type="widget" data-widget_type="button.default">
+				<div class="elementor-widget-container">
+					<div class="elementor-button-wrapper">
+			<a href="#" class="elementor-button-link elementor-button elementor-size-sm" role="button">
+						<span class="elementor-button-content-wrapper">
+						<span class="elementor-button-icon elementor-align-icon-right">
+				<i aria-hidden="true" class="fas fa-caret-right"></i>			</span>
+						<span class="elementor-button-text">Overview</span>
+		</span>
+					</a>
+		</div>
+				</div>
+				</div>
+				<div class="elementor-element elementor-element-97ce819 elementor-mobile-align-left arrow-right elementor-widget elementor-widget-button" data-id="97ce819" data-element_type="widget" data-widget_type="button.default">
+				<div class="elementor-widget-container">
+					<div class="elementor-button-wrapper">
+			<a href="#" class="elementor-button-link elementor-button elementor-size-sm" role="button">
+						<span class="elementor-button-content-wrapper">
+						<span class="elementor-button-icon elementor-align-icon-right">
+				<i aria-hidden="true" class="fas fa-caret-right"></i>			</span>
+						<span class="elementor-button-text">Mission</span>
+		</span>
+					</a>
+		</div>
+				</div>
+				</div>
+				<div class="elementor-element elementor-element-14b3167 elementor-mobile-align-left arrow-right elementor-widget elementor-widget-button" data-id="14b3167" data-element_type="widget" data-widget_type="button.default">
+				<div class="elementor-widget-container">
+					<div class="elementor-button-wrapper">
+			<a href="#" class="elementor-button-link elementor-button elementor-size-sm" role="button">
+						<span class="elementor-button-content-wrapper">
+						<span class="elementor-button-icon elementor-align-icon-right">
+				<i aria-hidden="true" class="fas fa-caret-right"></i>			</span>
+						<span class="elementor-button-text">People who made it possible</span>
+		</span>
+					</a>
+		</div>
+				</div>
+				</div>
+				<div class="elementor-element elementor-element-d61ce2a elementor-mobile-align-left arrow-right elementor-widget elementor-widget-button" data-id="d61ce2a" data-element_type="widget" data-widget_type="button.default">
+				<div class="elementor-widget-container">
+					<div class="elementor-button-wrapper">
+			<a href="#" class="elementor-button-link elementor-button elementor-size-sm" role="button">
+						<span class="elementor-button-content-wrapper">
+						<span class="elementor-button-icon elementor-align-icon-right">
+				<i aria-hidden="true" class="fas fa-caret-right"></i>			</span>
+						<span class="elementor-button-text">News & Publications</span>
+		</span>
+					</a>
+		</div>
+				</div>
+				</div>
+				<div class="elementor-element elementor-element-4dc0f11 elementor-mobile-align-left arrow-right elementor-widget elementor-widget-button" data-id="4dc0f11" data-element_type="widget" data-widget_type="button.default">
+				<div class="elementor-widget-container">
+					<div class="elementor-button-wrapper">
+			<a href="#" class="elementor-button-link elementor-button elementor-size-sm" role="button">
+						<span class="elementor-button-content-wrapper">
+						<span class="elementor-button-icon elementor-align-icon-right">
+				<i aria-hidden="true" class="fas fa-caret-right"></i>			</span>
+						<span class="elementor-button-text">Calendar</span>
+		</span>
+					</a>
+		</div>
+				</div>
+				</div>
+						</div>
+			</div>
+		</div>
+						</div>
+			</div>
+				<section class="elementor-element elementor-element-3a05e36 elementor-section-stretched elementor-section-content-space-between elementor-section-boxed elementor-section-height-default elementor-section-height-default elementor-section elementor-top-section" data-id="3a05e36" data-element_type="section" data-settings="{&quot;stretch_section&quot;:&quot;section-stretched&quot;}">
+		</section>
+
+				<section class="elementor-element elementor-element-5d4a942 elementor-section-content-middle elementor-section-stretched elementor-section-boxed elementor-section-height-default elementor-section-height-default elementor-section elementor-top-section" data-id="5d4a942" data-element_type="section" data-settings="{&quot;background_background&quot;:&quot;classic&quot;,&quot;stretch_section&quot;:&quot;section-stretched&quot;}">
+						<div class="elementor-container elementor-column-gap-no">
+				<div class="elementor-row">
+				<div class="elementor-element elementor-element-fff7bc6 elementor-column elementor-col-50 elementor-top-column" data-id="fff7bc6" data-element_type="column" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
+			<div class="elementor-column-wrap  elementor-element-populated">
+					<div class="elementor-widget-wrap">
+				<div class="elementor-element elementor-element-775a27a elementor-widget elementor-widget-spacer" data-id="775a27a" data-element_type="widget" data-widget_type="spacer.default">
+				<div class="elementor-widget-container">
+					<div class="elementor-spacer">
+			<div class="elementor-spacer-inner"></div>
+		</div>
+				</div>
+				</div>
+				<div class="elementor-element elementor-element-862e2e1 elementor-widget elementor-widget-spacer" data-id="862e2e1" data-element_type="widget" data-widget_type="spacer.default">
+				<div class="elementor-widget-container">
+					<div class="elementor-spacer">
+			<div class="elementor-spacer-inner"></div>
+		</div>
+				</div>
+				</div>
+						</div>
+			</div>
+		</div>
+				<div class="elementor-element elementor-element-e45cd54 elementor-column elementor-col-50 elementor-top-column" data-id="e45cd54" data-element_type="column" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
+			<div class="elementor-column-wrap  elementor-element-populated">
+					<div class="elementor-widget-wrap">
+				<div class="elementor-element elementor-element-5e917e2 elementor-widget elementor-widget-toggle" data-id="5e917e2" data-element_type="widget" data-widget_type="toggle.default">
+				<div class="elementor-widget-container">
+					<div class="elementor-toggle" role="tablist">
+							<div class="elementor-toggle-item">
+					<div id="elementor-tab-title-9911" class="elementor-tab-title" data-tab="1" role="tab" aria-controls="elementor-tab-content-9911">
+												<span class="elementor-toggle-icon elementor-toggle-icon-left" aria-hidden="true">
+															<span class="elementor-toggle-icon-closed"><i class="fas fa-caret-right"></i></span>
+								<span class="elementor-toggle-icon-opened"><i class="elementor-toggle-icon-opened fas fa-caret-up"></i></span>
+													</span>
+												<a href="">Providing next-level education</a>
+					</div>
+					<div id="elementor-tab-content-9911" class="elementor-tab-content elementor-clearfix" data-tab="1" role="tabpanel" aria-labelledby="elementor-tab-title-9911"><p>nothing currently </p></div>
+				</div>
+							<div class="elementor-toggle-item">
+					<div id="elementor-tab-title-9912" class="elementor-tab-title" data-tab="2" role="tab" aria-controls="elementor-tab-content-9912">
+												<span class="elementor-toggle-icon elementor-toggle-icon-left" aria-hidden="true">
+															<span class="elementor-toggle-icon-closed"><i class="fas fa-caret-right"></i></span>
+								<span class="elementor-toggle-icon-opened"><i class="elementor-toggle-icon-opened fas fa-caret-up"></i></span>
+													</span>
+												<a href="">Enrollment details</a>
+					</div>
+					<div id="elementor-tab-content-9912" class="elementor-tab-content elementor-clearfix" data-tab="2" role="tabpanel" aria-labelledby="elementor-tab-title-9912"><p>nothing currently</p></div>
+				</div>
+							<div class="elementor-toggle-item">
+					<div id="elementor-tab-title-9913" class="elementor-tab-title" data-tab="3" role="tab" aria-controls="elementor-tab-content-9913">
+												<span class="elementor-toggle-icon elementor-toggle-icon-left" aria-hidden="true">
+															<span class="elementor-toggle-icon-closed"><i class="fas fa-caret-right"></i></span>
+								<span class="elementor-toggle-icon-opened"><i class="elementor-toggle-icon-opened fas fa-caret-up"></i></span>
+													</span>
+												<a href="">Online teachers</a>
+					</div>
+					<div id="elementor-tab-content-9913" class="elementor-tab-content elementor-clearfix" data-tab="3" role="tabpanel" aria-labelledby="elementor-tab-title-9913"><p>nothing currently</p></div>
+				</div>
+							<div class="elementor-toggle-item">
+					<div id="elementor-tab-title-9914" class="elementor-tab-title" data-tab="4" role="tab" aria-controls="elementor-tab-content-9914">
+												<span class="elementor-toggle-icon elementor-toggle-icon-left" aria-hidden="true">
+															<span class="elementor-toggle-icon-closed"><i class="fas fa-caret-right"></i></span>
+								<span class="elementor-toggle-icon-opened"><i class="elementor-toggle-icon-opened fas fa-caret-up"></i></span>
+													</span>
+												<a href="">A Secure Environment</a>
+					</div>
+					<div id="elementor-tab-content-9914" class="elementor-tab-content elementor-clearfix" data-tab="4" role="tabpanel" aria-labelledby="elementor-tab-title-9914"><p>nothing now</p></div>
+				</div>
+					</div>
+				</div>
+				</div>
+				<div class="elementor-element elementor-element-0258c66 elementor-widget elementor-widget-text-editor" data-id="0258c66" data-element_type="widget" data-widget_type="text-editor.default">
+				<div class="elementor-widget-container">
+					<div class="elementor-text-editor elementor-clearfix"><p>Let's optimize regular learning with Aristotle ! </a></p></div>
+				</div>
+				</div>
+						</div>
+			</div>
+		</div>
+						</div>
+			</div>
+		</section>
+						</div>
+			</div>
+		</div>
+						</div>
+	</div>
+</div>
+	<div class="cbp-row wh-footer">
+		<div class="cbp-container wh-padding">
+					<div data-elementor-type="wp-post" data-elementor-id="5520" class="elementor elementor-5520" data-elementor-settings="[]">
+			<div class="elementor-inner">
+				<div class="elementor-section-wrap">
+							<section class="elementor-element elementor-element-e94eed8 elementor-section-stretched elementor-section-boxed elementor-section-height-default elementor-section-height-default elementor-section elementor-top-section" data-id="e94eed8" data-element_type="section" data-settings="{&quot;stretch_section&quot;:&quot;section-stretched&quot;,&quot;background_background&quot;:&quot;classic&quot;}">
+						<div class="elementor-container elementor-column-gap-default">
+				<div class="elementor-row">
+				<div class="elementor-element elementor-element-187e313 elementor-column elementor-col-25 elementor-top-column" data-id="187e313" data-element_type="column">
+			<div class="elementor-column-wrap  elementor-element-populated">
+					<div class="elementor-widget-wrap">
+				<div class="elementor-element elementor-element-488ac57 elementor-widget elementor-widget-heading" data-id="488ac57" data-element_type="widget" data-widget_type="heading.default">
+				<div class="elementor-widget-container">
+			<h2 class="elementor-heading-title elementor-size-default">Do you have a 
+contact ?</h2>		</div>
+				</div>
+				<div class="elementor-element elementor-element-a42ef1e elementor-widget elementor-widget-heading" data-id="a42ef1e" data-element_type="widget" data-widget_type="heading.default">
+				<div class="elementor-widget-container">
+			<h2 class="elementor-heading-title elementor-size-default">Get in touch with us to discuss it:</h2>		</div>
+				</div>
+				<div class="elementor-element elementor-element-41b1960 elementor-widget elementor-widget-heading" data-id="41b1960" data-element_type="widget" data-widget_type="heading.default">
+				<div class="elementor-widget-container">
+			<h2 class="elementor-heading-title elementor-size-default">Just give us a call, we reply 24/7 and will help you with your queries</h2>		</div>
+				</div>
+						</div>
+			</div>
+		</div>
+				<div class="elementor-element elementor-element-f70a683 elementor-column elementor-col-25 elementor-top-column" data-id="f70a683" data-element_type="column">
+			<div class="elementor-column-wrap  elementor-element-populated">
+					<div class="elementor-widget-wrap">
+				<div class="elementor-element elementor-element-24eec4d elementor-widget elementor-widget-heading" data-id="24eec4d" data-element_type="widget" data-widget_type="heading.default">
+				<div class="elementor-widget-container">
+			<h2 class="elementor-heading-title elementor-size-default">Talk with us:</h2>		</div>
+				</div>
+				<div class="elementor-element elementor-element-c60ce8f elementor-widget elementor-widget-heading" data-id="c60ce8f" data-element_type="widget" data-widget_type="heading.default">
+				<div class="elementor-widget-container">
+			<h2 class="elementor-heading-title elementor-size-default"T:   <u> 044-26869586</u><br>E:   <u><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="d9b0b7bfb699bcbdacbab8adb0b6b7f7bab6f7acb2">aristotle@gmail.com</a></u><br>F:   <u>Follow us on Facebook</u></h2>		</div>
+				</div>
+						</div>
+			</div>
+		</div>
+				<div class="elementor-element elementor-element-5902e3a elementor-column elementor-col-25 elementor-top-column" data-id="5902e3a" data-element_type="column">
+			<div class="elementor-column-wrap  elementor-element-populated">
+					<div class="elementor-widget-wrap">
+				<div class="elementor-element elementor-element-f2cab8d elementor-widget elementor-widget-heading" data-id="f2cab8d" data-element_type="widget" data-widget_type="heading.default">
+				
+				</div>
+						</div>
+			</div>
+		</div>
+				<div class="elementor-element elementor-element-f148e4b elementor-column elementor-col-25 elementor-top-column" data-id="f148e4b" data-element_type="column">
+			<div class="elementor-column-wrap  elementor-element-populated">
+					<div class="elementor-widget-wrap">
+				<section class="elementor-element elementor-element-a839420 elementor-section-boxed elementor-section-height-default elementor-section-height-default elementor-section elementor-inner-section" data-id="a839420" data-element_type="section" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
+						<div class="elementor-container elementor-column-gap-default">
+				<div class="elementor-row">
+				<div class="elementor-element elementor-element-58cee2f elementor-column elementor-col-100 elementor-inner-column" data-id="58cee2f" data-element_type="column">
+			<div class="elementor-column-wrap  elementor-element-populated">
+					<div class="elementor-widget-wrap">
+				<div class="elementor-element elementor-element-3679583 elementor-mobile-align-left arrow-right elementor-widget elementor-widget-button" data-id="3679583" data-element_type="widget" data-widget_type="button.default">
+				<div class="elementor-widget-container">
+					<div class="elementor-button-wrapper">
+			<a href="#" class="elementor-button-link elementor-button elementor-size-sm" role="button">
+						<span class="elementor-button-content-wrapper">
+						<span class="elementor-button-icon elementor-align-icon-right">
+				<i aria-hidden="true" class="fas fa-arrow-alt-circle-right"></i>			</span>
+						<span class="elementor-button-text">ENQUIRE NOW​</span>
+		</span>
+					</a>
+		</div>
+				</div>
+				</div>
+						</div>
+			</div>
+		</div>
+						</div>
+			</div>
+		</section>
+				<section class="elementor-element elementor-element-3bf735c elementor-section-boxed elementor-section-height-default elementor-section-height-default elementor-section elementor-inner-section" data-id="3bf735c" data-element_type="section" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
+						<div class="elementor-container elementor-column-gap-default">
+				<div class="elementor-row">
+				<div class="elementor-element elementor-element-f0133d2 elementor-column elementor-col-100 elementor-inner-column" data-id="f0133d2" data-element_type="column">
+			<div class="elementor-column-wrap  elementor-element-populated">
+					<div class="elementor-widget-wrap">
+				<div class="elementor-element elementor-element-bcde26e elementor-mobile-align-left arrow-right elementor-widget elementor-widget-button" data-id="bcde26e" data-element_type="widget" data-widget_type="button.default">
+				<div class="elementor-widget-container">
+					<div class="elementor-button-wrapper">
+			<a href="#" class="elementor-button-link elementor-button elementor-size-sm" role="button">
+						<span class="elementor-button-content-wrapper">
+						<span class="elementor-button-icon elementor-align-icon-right">
+				<i aria-hidden="true" class="fas fa-paper-plane"></i>			</span>
+						<span class="elementor-button-text">Contact us</span>
+		</span>
+					</a>
+		</div>
+				</div>
+				</div>
+						</div>
+			</div>
+		</div>
+						</div>
+			</div>
+		</section>
+						</div>
+			</div>
+		</div>
+						</div>
+			</div>
+		</section>
+				<section class="elementor-element elementor-element-7dce180 elementor-section-stretched elementor-section-boxed elementor-section-height-default elementor-section-height-default elementor-section elementor-top-section" data-id="7dce180" data-element_type="section" data-settings="{&quot;stretch_section&quot;:&quot;section-stretched&quot;,&quot;background_background&quot;:&quot;classic&quot;}">
+						<div class="elementor-container elementor-column-gap-default">
+				<div class="elementor-row">
+				<div class="elementor-element elementor-element-de4cf22 elementor-column elementor-col-100 elementor-top-column" data-id="de4cf22" data-element_type="column">
+			<div class="elementor-column-wrap  elementor-element-populated">
+					<div class="elementor-widget-wrap">
+				<div class="elementor-element elementor-element-4ab4ef4 elementor-widget elementor-widget-heading" data-id="4ab4ef4" data-element_type="widget" data-widget_type="heading.default">
+				<div class="elementor-widget-container">
+			<h2 class="elementor-heading-title elementor-size-default">Developed at Stackathon 2.0 by Team Alpha Monde</h2>		</div>
+				</div>
+						</div>
+			</div>
+		</div>
+						</div>
+			</div>
+		</section>
+						</div>
+			</div>
+		</div>
+				</div>
+	</div>
+		<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+		( function ( body ) {
+			'use strict';
+			body.className = body.className.replace( /\btribe-no-js\b/, 'tribe-js' );
+		} )( document.body );
+		</script>
+		<!-- Instagram Feed JS -->
+<script type="text/javascript">
+var sbiajaxurl = "http://ed.aislinthemes.com/classes/wp-admin/admin-ajax.php";
+</script>
+
+<input type="hidden" name="_aislin_cart_url" value="https://themeforest.net/item/ed-school-elementary-middle-and-highschool-wordpress-theme/19618075?license=regular&#038;purchasable=source&#038;open_purchase_for_item_id=19618075">
+
+<script type='text/javascript'> /* <![CDATA[ */var tribe_l10n_datatables = {"aria":{"sort_ascending":": activate to sort column ascending","sort_descending":": activate to sort column descending"},"length_menu":"Show _MENU_ entries","empty_table":"No data available in table","info":"Showing _START_ to _END_ of _TOTAL_ entries","info_empty":"Showing 0 to 0 of 0 entries","info_filtered":"(filtered from _MAX_ total entries)","zero_records":"No matching records found","search":"Search:","all_selected_text":"All items on this page were selected. ","select_all_link":"Select all pages","clear_selection":"Clear Selection.","pagination":{"all":"All","next":"Next","previous":"Previous"},"select":{"rows":{"0":"","_":": Selected %d rows","1":": Selected 1 row"}},"datepicker":{"dayNames":["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],"dayNamesShort":["Sun","Mon","Tue","Wed","Thu","Fri","Sat"],"dayNamesMin":["S","M","T","W","T","F","S"],"monthNames":["January","February","March","April","May","June","July","August","September","October","November","December"],"monthNamesShort":["January","February","March","April","May","June","July","August","September","October","November","December"],"nextText":"Next","prevText":"Prev","currentText":"Today","closeText":"Done"}};/* ]]> */ </script><script type='text/javascript'>
+/* <![CDATA[ */
+var wpcf7 = {"apiSettings":{"root":"http:\/\/ed.aislinthemes.com\/classes\/wp-json\/contact-form-7\/v1","namespace":"contact-form-7\/v1"}};
+/* ]]> */
+</body>
+</html>
+
